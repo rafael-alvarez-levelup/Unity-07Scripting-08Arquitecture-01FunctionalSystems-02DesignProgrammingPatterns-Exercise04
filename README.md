@@ -20,7 +20,7 @@ Una vez se resuelve el turno se comprueba si el jugador o el enemigo han muerto:
 
 
 **Objetivos:**
-1. Crear los siguientes sistemas e implementar el patrón command:
+1. Crear los siguientes sistemas e implementar el patrón singleton:
 * Convertir el sistema de gestión del juego en un Singleton.
 * Sistema de gestión de niveles del juego.
 * Sistema de gestión de las acciones del jugador y el enemigo.
