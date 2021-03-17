@@ -1,6 +1,4 @@
-﻿using UnityEngine.UI;
-
-public class PlayerTurnState : State, IObserver
+﻿public class PlayerTurnState : State, IObserver
 {
     private readonly ISelectActions actionSelector;
     private readonly ISubject playerTurnEnder;

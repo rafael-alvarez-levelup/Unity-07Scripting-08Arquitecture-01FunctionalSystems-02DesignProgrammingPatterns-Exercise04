@@ -8,10 +8,7 @@ public class PlayerButtonBehaviour : MonoBehaviour, ISetInteractable
     private void Awake()
     {
         button = GetComponent<Button>();
-    }
 
-    private void Start()
-    {
         SetInteractable(false);
     }
 

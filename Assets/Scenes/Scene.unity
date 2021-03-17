@@ -940,14 +940,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf8d3152c74d5147a2fe1b0e9c284b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 339237100}
   playerActionSelector: {fileID: 1002243576}
   buttonEndController: {fileID: 216462054}
   playerButtons:
+  - {fileID: 216462055}
   - {fileID: 996514225}
   - {fileID: 315443783}
   - {fileID: 1687736319}
-  - {fileID: 216462055}
   enemyActionSelector: {fileID: 1042885750}
   playerProcessor: {fileID: 1002243568}
   enemyProcessor: {fileID: 1042885742}

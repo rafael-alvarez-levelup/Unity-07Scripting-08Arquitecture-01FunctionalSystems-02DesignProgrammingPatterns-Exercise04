@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour, ISubject<LevelArgs>, IIncrementLevel
+public class LevelManager : Singleton<LevelManager>, ISubject<LevelArgs>, IIncrementLevel
 {
     private int currentLevel;
 

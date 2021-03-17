@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class GameStateController : StateController
 {
-    [SerializeField] private LevelManager levelManager;
     [SerializeField] private ActionSelectorController playerActionSelector;
     [SerializeField] private ButtonEndController buttonEndController;
     [SerializeField] private PlayerButtonBehaviour[] playerButtons;
@@ -20,7 +19,7 @@ public class GameStateController : StateController
 
     private void Awake()
     {
-        levelSetupState = new LevelSetupState(this, levelManager);
+        levelSetupState = new LevelSetupState(this);
         playerTurnState = new PlayerTurnState(this, playerActionSelector, buttonEndController, playerButtons);
         enemyTurnState = new EnemyTurnState(this, enemyActionSelector);
         turnResolutionState = new TurnResolutionState(this, playerProcessor, enemyProcessor,

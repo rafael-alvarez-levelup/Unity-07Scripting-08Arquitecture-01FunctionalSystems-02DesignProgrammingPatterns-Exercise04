@@ -2,11 +2,9 @@
 
 public class LevelSetupState : State
 {
-    private readonly IIncrementLevel levelIncrementer;
-
-    public LevelSetupState(IStateController controller, IIncrementLevel levelIncrementer) : base(controller)
+    public LevelSetupState(IStateController controller) : base(controller)
     {
-        this.levelIncrementer = levelIncrementer;
+        
     }
 
     public override void Enter()
@@ -16,7 +14,7 @@ public class LevelSetupState : State
 
         UnityEngine.Debug.Log($"Enter {typeof(LevelSetupState)}");
 
-        levelIncrementer.IncrementLevel();
+        LevelManager.Instance.IncrementLevel();
 
         // Instantiate new enemy
         UnityEngine.Debug.Log("Instantiate new enemy");
