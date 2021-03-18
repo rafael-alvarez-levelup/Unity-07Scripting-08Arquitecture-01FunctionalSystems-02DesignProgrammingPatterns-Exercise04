@@ -4,7 +4,7 @@ public class LevelSetupState : State
 {
     public LevelSetupState(IStateController controller) : base(controller)
     {
-        
+
     }
 
     public override void Enter()

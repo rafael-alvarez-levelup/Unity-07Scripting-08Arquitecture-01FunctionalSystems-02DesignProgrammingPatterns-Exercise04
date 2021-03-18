@@ -10,7 +10,7 @@ public class LevelVisualController : MonoBehaviour, IObserver<LevelArgs>
     {
         myText = GetComponent<Text>();
 
-        subject = FindObjectOfType<LevelManager>();
+        subject = LevelManager.Instance;
     }
 
     private void OnEnable()
