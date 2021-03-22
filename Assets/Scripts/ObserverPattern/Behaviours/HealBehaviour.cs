@@ -13,8 +13,9 @@ public class HealBehaviour : Subject<HealArgs>, IHeal
     {
         HealArgs healArgs = new HealArgs(healing);
 
-        foreach (var observer in observers)
+        for (int i = 0; i < observers.Count; i++)
         {
+            IObserver<HealArgs> observer = observers[i];
             observer.OnNotify(healArgs);
         }
     }

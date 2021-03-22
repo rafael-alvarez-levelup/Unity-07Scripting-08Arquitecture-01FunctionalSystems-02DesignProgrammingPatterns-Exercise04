@@ -21,7 +21,6 @@ public class HealController : MonoBehaviour, IObserver<HealArgs>
 
     public void OnNotify(HealArgs param)
     {
-        // TODO: Implement healing received.
-        print($"{gameObject.name} received {param.healing} healing!");
+
     }
 }

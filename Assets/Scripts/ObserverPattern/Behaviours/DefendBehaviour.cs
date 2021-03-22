@@ -2,7 +2,7 @@
 
 public class DefendBehaviour : Subject<DefendArgs>, IDefend
 {
-    [SerializeField] private int defence;
+    [SerializeField] private float damageReceivedMultiplier;
 
     public void Defend()
     {
@@ -11,10 +11,11 @@ public class DefendBehaviour : Subject<DefendArgs>, IDefend
 
     public override void Notify()
     {
-        DefendArgs defendArgs = new DefendArgs(defence);
+        DefendArgs defendArgs = new DefendArgs(damageReceivedMultiplier);
 
-        foreach (var observer in observers)
+        for (int i = 0; i < observers.Count; i++)
         {
+            IObserver<DefendArgs> observer = observers[i];
             observer.OnNotify(defendArgs);
         }
     }

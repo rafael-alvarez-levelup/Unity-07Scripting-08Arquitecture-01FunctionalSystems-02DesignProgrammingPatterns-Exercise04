@@ -1,5 +1,6 @@
 ﻿// TODO: Do an action and reset it?
 // Break in two (player and enemy)
+// Old
 
 public class TurnResolutionState : State
 {
@@ -9,13 +10,13 @@ public class TurnResolutionState : State
     private readonly IResetActions enemyReset;
 
     public TurnResolutionState(IStateController controller, ICommandProcessor playerProcessor,
-        ICommandProcessor enemyProcessor, IResetActions playerSelector,
-        IResetActions enemySelector) : base(controller)
+        ICommandProcessor enemyProcessor, IResetActions playerReset,
+        IResetActions enemyReset) : base(controller)
     {
         this.playerProcessor = playerProcessor;
         this.enemyProcessor = enemyProcessor;
-        this.playerReset = playerSelector;
-        this.enemyReset = enemySelector;
+        this.playerReset = playerReset;
+        this.enemyReset = enemyReset;
     }
 
     public override void Enter()

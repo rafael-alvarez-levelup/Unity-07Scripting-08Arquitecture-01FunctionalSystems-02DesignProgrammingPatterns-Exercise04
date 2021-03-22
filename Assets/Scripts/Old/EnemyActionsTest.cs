@@ -29,8 +29,6 @@ public class EnemyActionsTest : MonoBehaviour
         {
             ICommand command = controller.GetCurrentCommand();
 
-            print($"Enemy command selected: {command.GetType()}");
-
             yield return new WaitForSeconds(0.25f);
         }
     }
