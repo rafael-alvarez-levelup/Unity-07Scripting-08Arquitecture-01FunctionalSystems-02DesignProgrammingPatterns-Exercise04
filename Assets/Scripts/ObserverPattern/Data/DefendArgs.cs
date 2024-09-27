@@ -1,9 +1,9 @@
 ﻿public struct DefendArgs
 {
-    public readonly int defence;
+    public readonly float damageReceivedMultiplier;
 
-    public DefendArgs(int defence)
+    public DefendArgs(float damageReceivedMultiplier)
     {
-        this.defence = defence;
+        this.damageReceivedMultiplier = damageReceivedMultiplier;
     }
 }

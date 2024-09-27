@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-//TOOD: Implement heal and take damage
-
-public class HealthBehaviour : MonoBehaviour, IHealth
+public class HealthBehaviour : MonoBehaviour, IHealth, IDamageable, IHealable
 {
-    [SerializeField] private int maxHealth;
+    public int CurrentHealth => currentHealth;
+
+    [SerializeField] private int maxHealth = 100;
 
     private int currentHealth;
 
@@ -13,18 +13,15 @@ public class HealthBehaviour : MonoBehaviour, IHealth
         currentHealth = maxHealth;
     }
 
-    public int GetCurrentHealth()
-    {
-        return currentHealth;
-    }
-
     public void Heal(int amount)
     {
-
+        print($"{gameObject.name} heals for {amount}");
+        currentHealth += amount;
     }
 
     public void TakeDamage(int amount)
     {
-
+        print($"{gameObject.name} receives {amount} damage");
+        currentHealth -= amount;
     }
 }

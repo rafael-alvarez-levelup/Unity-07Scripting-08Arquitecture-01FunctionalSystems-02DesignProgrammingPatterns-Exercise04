@@ -21,7 +21,6 @@ public class DefendController : MonoBehaviour, IObserver<DefendArgs>
 
     public void OnNotify(DefendArgs param)
     {
-        // TODO: Implement defence received.
-        print($"{gameObject.name} received {param.defence} defence!");
+
     }
 }

@@ -2,9 +2,11 @@
 
 public class LevelSetupState : State
 {
-    public LevelSetupState(IStateController controller) : base(controller)
+    private readonly ISetInteractable[] playerButtons;
+
+    public LevelSetupState(IStateController controller, ISetInteractable[] playerButtons) : base(controller)
     {
-        
+        this.playerButtons = playerButtons;
     }
 
     public override void Enter()
@@ -14,12 +16,18 @@ public class LevelSetupState : State
 
         UnityEngine.Debug.Log($"Enter {typeof(LevelSetupState)}");
 
+        foreach (var button in playerButtons)
+        {
+            button.SetInteractable(false);
+        }
+
         LevelManager.Instance.IncrementLevel();
 
         // Instantiate new enemy
         UnityEngine.Debug.Log("Instantiate new enemy");
 
-        controller.SwitchState<PlayerTurnState>();
+        // Wait for enemy animation
+        TimeManager.Instance.WaitForSeconds(1.5f, () => SwitchState());
     }
 
     public override void Exit()
@@ -28,5 +36,10 @@ public class LevelSetupState : State
         // Unsuscribe from events
 
         UnityEngine.Debug.Log($"Exit {typeof(LevelSetupState)}");
+    }
+
+    private void SwitchState()
+    {
+        controller.SwitchState<PlayerTurnState>();
     }
 }

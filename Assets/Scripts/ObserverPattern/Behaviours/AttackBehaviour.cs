@@ -16,8 +16,9 @@ public class AttackBehaviour : Subject<AttackArgs>, IAttack
         // It won't change, cache
         AttackArgs attackArgs = new AttackArgs(damage);
 
-        foreach (var observer in observers)
+        for (int i = 0; i < observers.Count; i++)
         {
+            IObserver<AttackArgs> observer = observers[i];
             observer.OnNotify(attackArgs);
         }
     }

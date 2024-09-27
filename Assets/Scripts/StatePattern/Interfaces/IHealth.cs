@@ -1,4 +1,4 @@
 ﻿public interface IHealth
 {
-    int GetCurrentHealth();
+    int CurrentHealth { get; }
 }

@@ -19,7 +19,7 @@ public class EnemyTurnState : State
 
         actionSelector.SelectActions();
 
-        controller.SwitchState<TurnResolutionState>();
+        controller.SwitchState<EnemyResolveTurnState>();
     }
 
     public override void Exit()

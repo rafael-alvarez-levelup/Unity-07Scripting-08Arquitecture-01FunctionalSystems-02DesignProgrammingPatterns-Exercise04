@@ -1,4 +1,6 @@
-﻿public class LevelEndState : State
+﻿// TODO: Old
+
+public class LevelEndState : State
 {
     private readonly IHealth enemyHealth;
 
@@ -14,7 +16,7 @@
         // If enemy is alive (!null), switch to player turn state
         // Else, switch to level setup state
 
-        if (enemyHealth.GetCurrentHealth() <= 0)
+        if (enemyHealth.CurrentHealth <= 0)
         {
             controller.SwitchState<LevelSetupState>();
         }

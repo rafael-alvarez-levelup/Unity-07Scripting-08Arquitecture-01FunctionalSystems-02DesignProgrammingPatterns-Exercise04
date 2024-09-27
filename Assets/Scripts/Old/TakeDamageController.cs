@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// TODO: Moves this logic to the state
+
 public class TakeDamageController : MonoBehaviour, IObserver<AttackArgs>
 {
     [SerializeField] private GameObject target;
@@ -23,7 +25,6 @@ public class TakeDamageController : MonoBehaviour, IObserver<AttackArgs>
 
     public void OnNotify(AttackArgs param)
     {
-        // TODO: Implement damage taken.
-        print($"{gameObject.name} received {param.damage} damage!");
+
     }
 }
